@@ -1,0 +1,16 @@
+<script>
+  const arr = ['A', 'B', 'C'];
+  const arr2 = arr;
+  const arr3 = arr.slice();
+  const arr4 = [...arr];
+  const arr5 = [].concat(arr);
+  const arr6 = JSON.parse(JSON.stringify(arr));  //deepcopy ==> 문자열로 만들어서 완전히 새로운 방식으로 다시 만듫어 버린다.
+  arr.push('D');
+  console.log('arr : ', arr);
+  console.log('arr2 : ', arr2);
+  console.log('arr3 : ', arr3);
+  console.log('arr4 : ', arr4);
+  console.log('arr5 : ', arr5);
+  console.log('arr6 : ', arr6);
+
+</script>

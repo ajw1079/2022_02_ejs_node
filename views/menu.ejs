@@ -1,0 +1,17 @@
+<%- include('./inc/head') %>
+    <h3 class="logo">콩다방 커피 추천 메뉴</h3>
+    <ul class="lists">
+    <% for(let menu of menus) { %>
+      <li class="list">
+        <div class="title"><%= menu.name %></div>
+        <!-- ejs 주의 사항 : 메서드 주석 금지 ===> 로딩되면서 인식해 버린다. 확실히 지울 것~!! -->
+
+        <!-- #1. 던져주면서 처리하기 -->
+        <!-- <div class="price"><***%= numeral(menu.price).format('0,0') %>원</div> -->
+
+        <!-- #2. javascript에서 미리 처리하고 던져주기 -->
+        <div class="price"><%= menu.price %>원</div>
+      </li>
+    <% } %>
+    </ul>
+<%- include('./inc/foot') %>

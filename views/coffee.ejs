@@ -1,0 +1,12 @@
+<%- include('./inc/head') %>
+    <h3 class="logo">마시따 식당 추천 메뉴</h3>
+    <ul class="lists">
+      <!-- let v of coffee ===>  let v of menu -->
+    <% for(let v of menu) { %>
+      <li class="list">
+        <div class="title"><%= v.name %></div>
+        <div class="price"><%= numeral(v.price).format('0,0') %>원</div>
+      </li>
+    <% } %>
+    </ul>
+<%- include('./inc/foot') %>
