@@ -1,0 +1,8 @@
+/* pf.css */
+.pf-wrapper{padding: 20px;}
+
+.pf-wrap{display: flex;}
+.pf-wrap .pf{width: 25%; padding: 1%;}
+.pf-wrap .pf .img-wrap{width: 100%; height: 200px; border-radius: 8px; overflow: hidden;}
+.pf-wrap .pf .img-wrap img{width: 100%; height: 100%; object-fit: cover;}
+.pf-wrap .pf .title{font-size: 17px; color:#555; padding: 10px 0; text-align: center;}

@@ -1,0 +1,12 @@
+/* about.css */
+
+.about-wrapper{padding: 20px;}
+
+.about-wrap{display: flex; align-items: center;}
+
+.img-wrap{width: 40%; padding: 0 10px;}
+.img-wrap img{width: 100%; border-radius: 8px;}
+
+.cont-wrap{width: 60%; padding: 0 10px;}
+.cont-wrap p{line-height: 1.9;}
+

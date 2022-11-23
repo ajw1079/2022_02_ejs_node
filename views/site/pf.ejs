@@ -1,0 +1,17 @@
+<%- include('../inc/head')%>
+<div class="wrapper">
+  <%- include('../inc/nav')%>
+  <!--  본문내용 -->
+  <section class="pf-wrapper content-wrapper">
+    <%- include('../inc/titleBar')%>
+    <div class="pf-wrap">
+      <% for(let list of lists) { %>
+        <%- include('../modules/list', { list })%>
+        <!-- 데이터를 전달한다. -->
+      <% } %>
+    </div>
+  </section>
+  <!--  본문내용 종료 -->
+  <%- include('../inc/footer')%>
+</div>
+<%- include('../inc/foot')%>

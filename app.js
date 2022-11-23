@@ -1,81 +1,44 @@
 /*************** global init **************/
-const port = 3000
-const express = require('express')
-const app = express()
+const port = 3000;
+const express = require('express');
+const app = express();
 const numeral = require('numeral');
 const _ = require('lodash');
 
-const coffee = [
-  {name: '아메리카노', price: 2500},
-  {name: '까페라떼', price: 3500},
-  {name: '바닐라라떼', price: 3800},
-  {name: '카라멜 마끼아또', price: 4500},
-]
-const food = [
-  {name: '피자', price: 15000},
-  {name: '올리브 파스타', price: 12000},
-  {name: '리조또', price: 10000},
-  {name: '돈가스', price: 9000},
-]
-const desert = [
-  {name: '치즈케잌', price: 9000},
-  {name: '잉글리쉬머핀', price: 4000},
-  {name: '크로와상', price: 3500},
-  {name: '마카롱', price: 3000},
-]
-
 /************** view engine ***************/
-app.set('view engine', 'ejs')
-app.set('views', './views')
+app.set('view engine', 'ejs');
+app.set('views', './views');
 
 
 /*************** middleware ***************/
-app.use(express.json())
-app.use(express.urlencoded({ extended: false }))
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 
 /*************** router init **************/
-app.use('/', express.static('./public'))
-app.get('/coffee', (req, res, next) => {
-  const menus = [
-    {name: '아메리카노', price: 2500},
-    {name: '까페라떼', price: 3500},
-    {name: '바닐라라떼', price: 3800},
-    {name: '카라멜 마끼아또', price: 4500},
-  ]
+app.use('/', express.static('./public'));
+app.use('/resources', express.static('./assets'));  //정적 파일을 가져올 app.use()를 사용  //실제 경로가 아닌 곳으로 돌려 놓는다. 해킹을 방지하기 위해 사용
+app.get('/about', (req, res, next) => {
+  const title = 'About Me';
+  const file = 'about';
+  const content = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quia officia sit suscipit, sequi culpa optio nemo debitis soluta? Alias delectus eius deleniti error placeat, debitis earum id culpa voluptatum?';
+res.render('site/about', {title, file, content});
+});
 
-  // res.status(200).render(view파일, {전달할 파일});
-  /* #1. 던져주면서 처리하기 */
-  // res.status(200).render('menu', {menus, numeral});  //numeral 스크립트를 함께 보내어 구문에서 연동하도록 구성한다. 
-
-  /* #2. javascript에서 미리 처리하고 던져주기 */
-  const sendMenus = _.cloneDeep(menus).map(v => {
-    v.price = numeral(v.price).format('0,0');
-    return v;
-  });
-  
-  res.status(200).render('menu', {menus : sendMenus});
-})
-
-
-//////////////////////////////////
-
-// app.get('/menu/coffee', (req, res, next) => {
-//   res.status(200).render('coffee', {coffee, numeral});
-// });
-// app.get('/menu/food', (req, res, next) => {
-//   res.status(200).render('food', {food, numeral});
-// });
-// app.get('/menu/desert', (req, res, next) => {
-//   res.status(200).render('desert', {desert, numeral});
-// });
-
-
-app.get('/menu/:name', (req, res, next) => {
-  const name = req.params.name;
-  res.status(200).render(name, {menu: eval(name), numeral});
+app.get('/pf', (req, res, next) => {
+  const title = 'Portfolio';
+  const file = 'pf';
+  const lists = [
+    {title: 'PF_01', src: 'cat_01.jpeg'},
+    {title: 'PF_02', src: 'cat_02.jpeg'},
+    {title: 'PF_03', src: 'cat_03.jpeg'},
+    {title: 'PF_04', src: 'cat_04.jpeg'},
+  ];
+res.render('site/pf', {title, file, lists});
 });
 
 
+
+
 /*************** server init **************/
-app.listen(port, () => { console.log('http://127.0.0.1:'+port) })
+app.listen(port, () => { console.log('http://127.0.0.1:'+port) });

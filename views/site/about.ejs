@@ -1,0 +1,20 @@
+<%- include('../inc/head')%>
+<div class="wrapper">
+  <%- include('../inc/nav')%>
+  <!--  본문내용 -->
+  <section class="about-wrapper content-wrapper">
+    <%- include('../inc/titleBar')%>
+
+    <div class="about-wrap">
+      <div class="img-wrap">
+        <img src="/img/cat_02.webp" alt="귀여운 고양이 이미지">
+      </div>
+      <div class="cont-wrap">
+        <p><%= content %></p>
+      </div>
+    </div>
+  </section>
+  <!--  본문내용 종료 -->
+  <%- include('../inc/footer')%>
+</div>
+<%- include('../inc/foot')%>
