@@ -2,9 +2,10 @@
 <div class="wrapper">
   <%- include('../inc/nav')%>
   <!--  본문내용 -->
-  <section class="pf-wrapper content-wrapper">
+  <section class="team-wrapper content-wrapper">
     <%- include('../inc/titleBar')%>
-    <div class="pf-wrap">
+    <h3 class="subTitle"><%= subTitle %></h3>
+    <div class="team-wrap">
       <% for(let list of lists) { %>
         <%- include('../modules/list', { list })%>
         <!-- 데이터를 전달한다.  -->

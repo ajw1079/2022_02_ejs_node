@@ -37,6 +37,18 @@ app.get('/pf', (req, res, next) => {
 res.render('site/pf', {title, file, lists});
 });
 
+app.get('/team', (req, res, next) => {
+  const title = 'Team Information';
+  const subTitle = '환상의 팀원을 소개합니다.';
+  const file = 'team';
+  const lists = [
+    {title: 'CEO', src: 'team_01.jpeg'},
+    {title: 'CAO', src: 'team_02.jpeg'},
+    {title: 'CTO', src: 'team_03.jpeg'}
+  ];
+  res.render('site/team', {title, subTitle, file, lists});
+});
+
 
 
 
