@@ -1,0 +1,25 @@
+doctype html
+html(lang="ko")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title=title
+		link(rel="stylesheet", href="/css/bootstrap.min.css")
+		link(rel="stylesheet", href="/css/base.css")
+		link(rel="stylesheet", href="/css/test.css")
+	body 
+		//- 들여쓰기시 탭 또는 스페이스로 하나만 선언할 것
+		//- pug는 반드시 탭으로 들여쓰기를 반드시 해야한다.
+		.wrapper
+			h1=title 
+			p= `${title} Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore possimus optio recusandae accusantium sunt nostrum cupiditate unde ut! Maxime maiores veniam quo possimus quia perferendis quod reprehenderit minus illum sapiente.`
+			ul.lists.d-flex 
+				if lists
+					each list in lists
+						li.list
+							.img-wrap
+								img.w100(src=`/img/${list.src}`)
+							.title-wrap= list.title
+				else 
+					p 데이터가 없습니다.

@@ -1,0 +1,21 @@
+.wrapper{
+  max-width: 800px;
+  margin: 20px auto;
+}
+.lists{display: flex; flex-wrap: wrap;}
+.lists .list{
+  width: calc(100% / 3 - 20px);
+  margin: 0 10px;
+  text-align: center;
+}
+.lists .list .img-wrap{
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.lists .list .img-wrap img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

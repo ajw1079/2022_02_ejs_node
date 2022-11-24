@@ -1,0 +1,34 @@
+doctype html
+html(lang="ko")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title Pug를 소개합니다.
+		link(rel="stylesheet", href="/css/bootstrap.min.css")
+		link(rel="stylesheet", href="/css/base.css")
+		link(rel="stylesheet", href="/css/test.css")
+	body
+		.wrapper
+			h1 Pug를 소개합니다.
+			p
+				| Pug를 소개합니다. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+				| Inventore possimus optio recusandae accusantium sunt nostrum cupiditate unde ut!
+				| Maxime maiores veniam quo possimus quia perferendis quod reprehenderit minus
+				| illum sapiente.
+			ul.lists.d-flex
+				li.list
+					.img-wrap
+						img.w100(src="/img/team_01.jpeg")
+					.title-wrap CEO
+				li.list
+					.img-wrap
+						img.w100(src="/img/team_02.jpeg")
+					.title-wrap CAO
+				li.list
+					.img-wrap
+						img.w100(src="/img/team_03.jpeg")
+					.title-wrap CTO
+
+				//-나만보는 주석
+				//함께 보는 주석
