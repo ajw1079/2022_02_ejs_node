@@ -31,6 +31,9 @@ app.get('/test', (req, res, next) => {
 app.get('/test2', (req, res, next) => {
   res.status(200).render('test2');
 });
+app.get('/test3', (req, res, next) => {
+  res.status(200).render('test3');
+});
 
 app.get('/about', (req, res, next) => {
   const title = 'About Me';

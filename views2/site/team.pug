@@ -1,0 +1,16 @@
+extends ../layout/sample-layout
+
+include ../mixins/list 
+
+block content 
+  // 본문내용
+  section.team-wrapper.content-wrapper
+    include ../inc/title-bar
+      h3.subTitle= subTitle    
+        .team-wrap
+          each list in lists 
+            +list(list)
+
+
+
+

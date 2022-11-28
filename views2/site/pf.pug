@@ -1,0 +1,14 @@
+extends ../layout/sample-layout
+
+include ../mixins/list 
+
+block content 
+  // 본문내용
+  section.pf-wrapper.content-wrapper
+    include ../inc/title-bar
+    .pf-wrap
+      each list in lists 
+        +list(list)
+
+
+

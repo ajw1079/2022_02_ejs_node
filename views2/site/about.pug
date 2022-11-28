@@ -1,0 +1,12 @@
+extends ../layout/sample-layout
+block content 
+  // 본문내용
+  section.about-wrapper.content-wrapper 
+    include ../inc/title-bar 
+    .about-wrap 
+      .img-wrap 
+        img.w100(src='/img/cat_02.webp' alt='me')
+      .content-wrap= content
+  // 본문내용 끝
+
+  //레이아웃을 가져와서 본문내용에 넣는다.
